@@ -1,0 +1,15 @@
+.toggle-tab{
+    
+    display: flex;
+    position : relative;
+    height:100vh;
+    background-color: #eee;
+
+    &.expand{
+        width: 200px;
+        transition: all 0.2s ease-in-out;
+    }
+    &.eng{
+        width: 50px;
+    }
+}
