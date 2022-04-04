@@ -7,7 +7,7 @@ const SALT_ROUND= 10
 const SECRET_KEY = process.env.SECRET_KEY || String(1111);
 
 const userSchema = new mongoose.Schema({
-  _id: String,
+  // _id: String,
   username: {
     type: String,
     required: true,
@@ -21,9 +21,9 @@ const userSchema = new mongoose.Schema({
 
 // pre hooks
 userSchema.pre('save', function(next){
-  const user = this.user;
+  const user = this;
     console.log('user inside save ',user);
-    if(user.isModified('password')){
+   // if(user.isModified('password')){
       // 1. salt
       bcrypt.genSalt(SALT_ROUND, function(err, salt){
 
@@ -35,10 +35,10 @@ userSchema.pre('save', function(next){
         })
 
       })
-    }
-    else{
-      next();
-    }
+    //}
+    // else{
+    //   next();
+    // }
   
 });
 

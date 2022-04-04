@@ -23,9 +23,10 @@ function App() {
       {/* <NavComp /> */}
       <MainMenu />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Register />} />
         <Route path="/cloud" element={<Cloud />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
