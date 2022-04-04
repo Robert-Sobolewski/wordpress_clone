@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 
 export interface IUser{
     value: null|any;
@@ -10,7 +10,7 @@ const init:IUser ={
     value: null
 }
 
-const userSlice = createSlice({
+const userSlice:Slice = createSlice({
     name: 'user',
     initialState: init,
     reducers:{

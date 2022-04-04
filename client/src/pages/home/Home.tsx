@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import ToggleTab from "../components/toggle-tab/ToggleTab";
+import ToggleTab from "../../components/toggle-tab/ToggleTab";
 import "./Home.scss";
 
 const Home = () => {

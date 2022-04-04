@@ -1,12 +1,13 @@
 import { Avatar, IconButton, Stack } from "@mui/material";
 import React, { Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { BsCollection, BsPuzzle, BsPlus } from "react-icons/bs";
 import "./MainMenu.scss";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import { AiOutlineCloudServer } from "react-icons/ai";
 import { OverlayTrigger, Popover } from "react-bootstrap";
 const MainMenu = () => {
+  const location = useLocation();
   return (
     <Fragment>
       <div className="main-menu">
@@ -24,7 +25,9 @@ const MainMenu = () => {
             }
           >
             <IconButton>
-              <Avatar />
+              <NavLink id="loginBtn" to="/login">
+                <Avatar sx={{ fontSize: "30" }} />
+              </NavLink>
             </IconButton>
           </OverlayTrigger>
 

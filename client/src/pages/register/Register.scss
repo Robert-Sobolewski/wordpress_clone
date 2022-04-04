@@ -1,0 +1,20 @@
+.register{
+    display: flex;
+    flex: 1;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(112, 64, 64, 0.5);
+    flex-direction: column;
+
+
+    #register-form{
+        width: 50%;
+        min-width: 400px;
+        border: solid 1px red;
+        background-color:#fff;
+        min-height: 500px;
+    }
+}

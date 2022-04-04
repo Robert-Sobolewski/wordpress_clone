@@ -17,6 +17,9 @@ $menu-color: #fff;
         background: $menu-active;
         padding:1em 1.7em;
 
+        &#loginBtn{
+            padding: 1em 1.25em;
+        }
         svg{
             color: $menu-color;
         }
