@@ -9,7 +9,7 @@ registerRouter.post('/',async(req:express.Request, res: express.Response)=>{
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        avatar:"",
+        avatar: req.body.avatar!= null? req.body.avatar: "",
         role: req.body.role!=null? req.body.role:"user"
     });
     try {

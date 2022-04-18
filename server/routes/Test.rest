@@ -1,0 +1,11 @@
+
+### confirm post endpoint
+POST http://localhost:4444/confirm
+Content-Type: application/json
+
+{
+    "From":"godanor@hotmail.com",
+    "to":"rrrguru112@gmail.com",
+    "subject":"Confirmation",
+    "message":"Confirmation link here ..., and message too"
+}

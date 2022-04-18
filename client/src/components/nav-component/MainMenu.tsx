@@ -1,13 +1,25 @@
 import { Avatar, IconButton, Stack } from "@mui/material";
 import React, { Fragment } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { BsCollection, BsPuzzle, BsPlus } from "react-icons/bs";
 import "./MainMenu.scss";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import { AiOutlineCloudServer } from "react-icons/ai";
 import { OverlayTrigger, Popover } from "react-bootstrap";
+import { logout, selectUser } from "../../redux/userSlicer";
+import { useDispatch, useSelector } from "react-redux";
 const MainMenu = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  const avatarClick = () => {
+    if (user) {
+      dispatch(logout());
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <Fragment>
       <div className="main-menu">
@@ -19,15 +31,21 @@ const MainMenu = () => {
             overlay={
               <Popover id="avatar">
                 <Popover.Body>
-                  <h6 style={{ color: "#51bb7b" }}>LOGIN to WordpressClone</h6>
+                  <h6 style={{ color: "#51bb7b" }}>
+                    {user
+                      ? `Welcome ${user?.username}`
+                      : "LOGIN to WordpressClone"}
+                  </h6>
                 </Popover.Body>
               </Popover>
             }
           >
             <IconButton>
-              <NavLink id="loginBtn" to="/login">
-                <Avatar sx={{ fontSize: "30" }} />
-              </NavLink>
+              <a id="loginBtn">
+                <Avatar sx={{ fontSize: "30" }} onClick={avatarClick}>
+                  {user?.username[0].toUpperCase()}
+                </Avatar>
+              </a>
             </IconButton>
           </OverlayTrigger>
 

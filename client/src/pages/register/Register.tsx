@@ -10,6 +10,7 @@ const Register = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [avatar, setAvatar] = useState<string>("");
   const [show, setShow] = useState<boolean>(false);
   const [isDone, setIsDone] = useState<boolean | null>(null);
   const handleClose = () => {
@@ -88,6 +89,13 @@ const Register = () => {
             id="input-password"
             type="password"
             label="Password"
+            variant="standard"
+          />
+          <TextField
+            value={avatar}
+            onChange={(e: any) => setAvatar(e.target.value)}
+            id="input-avatar"
+            label="Avatar"
             variant="standard"
           />
           <input className="btn btn-primary" type="submit" value="Submit" />

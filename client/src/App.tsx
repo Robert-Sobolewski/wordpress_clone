@@ -8,6 +8,7 @@ import MainMenu from "./components/nav-component/MainMenu";
 import Cloud from "./pages/cloud/Cloud";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Confirm from "./pages/confirm/Confirm";
 
 export const LocationDisplay = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/confirm" element={<Confirm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
